@@ -1,0 +1,14 @@
+ext {
+    compileSdkVersion = 29
+    minSdkVersion = 19
+    targetSdkVersion = 29
+    versionCode = 30
+    versionName = "1.0.0"
+
+    //新版本描述信息
+    versionDesc = "Android串口开发，基于官方的android-serialport-api增加支持设置奇偶校验、数据位和停止位"
+    //项目的主页
+    siteUrl = "https://github.com/azhon/SerialPortPlus"
+    //gitHub仓库的地址
+    gitUrl = "https://github.com/azhon/SerialPortPlus.git"
+}
