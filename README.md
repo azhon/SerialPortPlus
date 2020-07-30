@@ -3,7 +3,7 @@ Android串口开发，基于谷歌官方的[android-serialport-api](https://gith
 
 ## 使用步骤
 
-### 第一步：下载本项目，在你的项目中点击File —> New -> Import Module...然后选择serialport；然后在你的项目中依赖basicLib
+### 第一步：下载本项目，在你的项目中点击File —> New -> Import Module...然后选择serialport；然后在你的项目中依赖serialport
 
 ### 第二步：打开串口
 
