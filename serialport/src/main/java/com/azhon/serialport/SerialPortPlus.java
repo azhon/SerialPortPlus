@@ -102,19 +102,16 @@ public class SerialPortPlus extends SerialPort {
             try {
                 InputStream is = getInputStream();
                 while (receiveData) {
-                    int count = is.available();
-                    while (count == 0) {
-                        Thread.sleep(500);
-                        count = is.available();
+                    byte[] data = new byte[512];
+                    int len = is.read(data);
+                    if (len > 0) {
+                        ByteBuf byteBuf = Unpooled.wrappedBuffer(data, 0, len);
+                        if (receiveDataListener != null) {
+                            receiveDataListener.receiveData(byteBuf);
+                        }
                     }
-                    byte[] data = new byte[count];
-                    is.read(data);
-                    ByteBuf byteBuf = Unpooled.wrappedBuffer(data);
-                    if (receiveDataListener != null) {
-                        receiveDataListener.receiveData(byteBuf);
-                    }
+                    Thread.sleep(50);
                 }
-            } catch (InterruptedException e) {
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.e(TAG, "receive data error :" + e.getMessage());
