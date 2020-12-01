@@ -6,7 +6,7 @@ Android串口开发，基于谷歌官方的[android-serialport-api](https://gith
 ### 第一步：`app/build.gradle`进行依赖
 
 ```groovy
-implementation 'com.azhon:serialport:1.0.0'
+implementation 'com.azhon:serialport:1.0.1'
 ```
 
 ### 第二步：打开串口
